@@ -12,8 +12,8 @@ Crate `myip` gets the local IP address by requesting `http://httpbin.org/ip` and
 ## Usage
 
 ```toml
-[dependencies.myip]
- git = { "https://github.com/kevingimbel/myip", branch = "master" } 
+[dependencies]
+myip  = { git = "https://github.com/kevingimbel/myip", branch = "master" } 
 ```
 
 ```rust
