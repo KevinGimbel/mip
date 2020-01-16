@@ -1,7 +1,9 @@
 # myip
-> Small crate to get local IPv4 address by making an HTTP request to httpbin.org/ip
+> Get IPv4 address in rust - with 0 dependencies!
 
-Crate `myip` gets the local IP address by requesting `http://httpbin.org/ip` and parsing the returned output.
+Crate `myip` gets the local IP address by requesting `http://httpbin.org/ip` and parsing the returned output. 
+
+It has 0 dependencies and only relies on the Rust std lib. 
 
 <!-- BEGIN mktoc -->
 - [Usage](#usage)
@@ -37,7 +39,7 @@ fn main() {
 
 Some things that need to be done
 
-- [ ] Clean-up code
+- [x] Clean-up code
 - [ ] Write proper docs
 - [ ] Use multiple providers randomly / with fallback like http://checkip.dyndns.com and http://checkip.dyndns.org
 - [ ] Support IPv6? 
