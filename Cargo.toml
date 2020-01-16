@@ -3,7 +3,8 @@ name = "myip"
 version = "0.2.0"
 authors = ["Kevin Gimbel <hallo@kevingimbel.com>"]
 edition = "2018"
-
+license = "MIT"
+description = "Get local IPv4 address"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dev-dependencies]
