@@ -1,10 +1,11 @@
 [package]
-name = "myip"
-version = "0.2.0"
+name = "mip"
+version = "0.3.0"
 authors = ["Kevin Gimbel <hallo@kevingimbel.com>"]
 edition = "2018"
-license = "MIT"
 description = "Get local IPv4 address"
+keywords = ["ip", "ipv4"]
+license = "AGPL-3.0-or-later"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dev-dependencies]
