@@ -28,11 +28,14 @@ fn parse_ip(input: &str) -> Result<Ipv4Addr, AddrParseError> {
         .split(|c| {
             c == ' '
                 || c == '.' // split . (divider between IP parts)
+                || c == ',' // split , (divider between multi IPs)
                 || c == ':' // split : (e.g. "your ip:")
                 || c == '<' // split XML/HTML opening tags 
                 || c == '>' // split XML/HTML closing tags
                 || c == '{' // split JSON opening tags 
                 || c == '}' // split JSON closing tags
+                || c == '\n' // split new lines
+                || c == '\r' // split new lines
         })
         .collect();
     let mut ip_vec: Vec<i32> = vec![];
@@ -114,7 +117,6 @@ mod tests {
 
         let ip = IP::is();
         let re = Regex::new(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}").unwrap();
-
         assert_eq!(re.is_match(ip.as_str()), true);
     }
 
