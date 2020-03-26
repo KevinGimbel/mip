@@ -7,6 +7,7 @@ It has 0 dependencies and only relies on the Rust std lib.
 
 <!-- BEGIN mktoc -->
 - [Usage](#usage)
+- [Custom Endpoint](#custom-endpoint)
 - [Todo](#todo)
 - [License](#license)
 <!-- END mktoc -->
@@ -16,7 +17,7 @@ It has 0 dependencies and only relies on the Rust std lib.
 Add the following to `Cargo.toml`.
 ```toml
 [dependencies]
-mip = "0.3.0
+mip = "0.4.0
 ```
 
 ```rust
@@ -33,6 +34,23 @@ Or without `use`
 
 fn main() {
     println!("My IP is {}", mip::IP::is());
+}
+```
+
+## Custom Endpoint
+
+Instead of using httpbin.org a custom endpoint can be used. Custom endpoints may not parse properly so test before using in production!
+
+```rust
+use mip::{IP, Endpoint};
+
+fn main() {
+    let ip = IP::with_endpoint(Endpoint {
+        path: Some("/"),
+        host: "checkip.dyndns.com",
+        port: 80,
+    });
+    println!("{}", ip)
 }
 ```
 
